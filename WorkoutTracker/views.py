@@ -17,13 +17,13 @@ def index(request: HttpRequest):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/home')
+            return redirect(reverse("workouts:view"))
             # Redirect to a success page.
         else:
             msgs = ['fail to login']
             return render(request, "home.html", {"messages": msgs})
         # Return an 'invalid login' error message.
-        
+
         # form = AuthenticationForm(request.POST)
         # if form.is_valid():
         #     user = form.get_user()

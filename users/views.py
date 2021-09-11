@@ -39,6 +39,7 @@ def register(request):
                     msgs.append(validator[1])
             return render(request, "users/register.html", {"messages": msgs})
 
+
 def logOut(request):
     if request.method == "GET":
         # try:
