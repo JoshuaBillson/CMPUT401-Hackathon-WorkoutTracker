@@ -5,5 +5,5 @@ app_name = "workouts"
 
 urlpatterns = [
     path("view/", views.view, name="view"),
-    path("home/", views.view, name="home"),
+    path("submit/", views.submit, name="submit"),
 ]
