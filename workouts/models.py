@@ -3,7 +3,7 @@ import datetime
 
 class WorkoutLog(models.Model):
     exercise = models.CharField(max_length=100)
-    duration = models.DecimalField(max_digits=3 , decimal_places=4)
+    duration = models.DecimalField(max_digits=5 , decimal_places=5)
     date = models.DateField(default=datetime.date.today())
 
 class DietPlan(models.Model):
