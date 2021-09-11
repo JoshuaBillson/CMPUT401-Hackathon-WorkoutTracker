@@ -7,5 +7,3 @@ from django.db.models import F
 def view(request: HttpRequest):
     return render(request, "workouts/view.html", {})
 
-def view(request: HttpRequest):
-    return render(request, "workouts/home.html", {})
