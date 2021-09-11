@@ -32,4 +32,3 @@ def index(request: HttpRequest):
         # else:
         #     msgs = ['fail to login']
         #     return render(request, "home.html", {"messages": msgs})
-    

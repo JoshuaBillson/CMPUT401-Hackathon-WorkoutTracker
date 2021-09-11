@@ -1,3 +1,7 @@
 .DS_Store
 .idea
 db.sqlite3
+__pycache__
+users/__pycache__
+workouts/__pycache__
+WorkoutTracker/__pycache__

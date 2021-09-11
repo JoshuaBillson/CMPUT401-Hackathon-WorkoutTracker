@@ -2,4 +2,11 @@
 
 {% block content %}
     <h2>Welcome {{ user.username }}!</h2>
+    {% for workout in workouts %}
+        <hr>
+        <h3>{{ workout.exercise }}</h3>
+        <h4>{{ workout.duration }}</h4>
+        <h4>{{ workout.date }}</h4>
+        <hr>
+    {% endfor %}
 {% endblock %}
