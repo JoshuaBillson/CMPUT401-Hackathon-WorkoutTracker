@@ -105,10 +105,9 @@ body {font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman'}
       <input type="password" placeholder="Password" name="password" required>
   
       <button type="submit" class="btn">Login</button>
-      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
     </form>
 </div>
-{% end content %}
+{% endblock %}
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -118,10 +117,6 @@ body {font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman'}
 <script>
     function openForm() {
       document.getElementById("myForm").style.display = "block";
-    }
-    
-    function closeForm() {
-      document.getElementById("myForm").style.display = "none";
     }
 </script>
 
