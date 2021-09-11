@@ -6,6 +6,3 @@ from django.db.models import F
 # Create your views here.
 def view(request: HttpRequest):
     return render(request, "workouts/view.html", {})
-
-def view(request: HttpRequest):
-    return render(request, "workouts/home.html", {})

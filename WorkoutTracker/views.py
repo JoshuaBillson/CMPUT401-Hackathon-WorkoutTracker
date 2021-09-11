@@ -5,4 +5,4 @@ from django.db.models import F
 
 # Create your views here.
 def index(request: HttpRequest):
-    return render(request, "base.html", {"message": "This Is The Home Page!"})
+    return render(request, "home.html", {})

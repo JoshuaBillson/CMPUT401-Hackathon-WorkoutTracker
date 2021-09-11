@@ -2,9 +2,26 @@ from django.contrib.auth import login
 from django.shortcuts import redirect, render, Http404
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
-def dashboard(request):
-    return render(request, "users/dashboard.html")
+
+def passwordLengthValidator(form: dict):
+    return len(form["password1"]) >= 8 and len(form["password2"]) >= 8
+
+
+def passwordsMatchValidator(form: dict):
+    return form["password1"] == form["password2"]
+
+
+def uniqueUsernameValidator(form: dict):
+    username = form["username"]
+    return len(User.objects.filter(username=username)) == 0
+
+
+validators = [(passwordLengthValidator, "Passwords Must Contain At Least 8 Characters!"),
+              (passwordsMatchValidator, "Entered Passwords Do Not Match!"),
+              (uniqueUsernameValidator, "This Username Is Already Taken!")]
+
 
 def register(request):
     if request.method == "GET":
@@ -16,5 +33,8 @@ def register(request):
             login(request, user)
             return redirect(reverse("workouts:view"))
         else:
-            msgs = ["Invalid Password!"]
+            msgs = []
+            for validator in validators:
+                if not validator[0](request.POST):
+                    msgs.append(validator[1])
             return render(request, "users/register.html", {"messages": msgs})
