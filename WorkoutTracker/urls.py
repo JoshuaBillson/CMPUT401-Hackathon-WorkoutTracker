@@ -18,6 +18,7 @@ from django.urls import include, path
 from .views import index
 
 urlpatterns = [
+    path("", index),
     path("home/", index),
     path("workouts/", include("workouts.urls")),
     path("users/", include("users.urls")),

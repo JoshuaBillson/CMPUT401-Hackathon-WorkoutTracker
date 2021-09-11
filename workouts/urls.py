@@ -5,4 +5,5 @@ app_name = "workouts"
 
 urlpatterns = [
     path("view/", views.view, name="view"),
+    path("submit/", views.submit, name="submit"),
 ]
