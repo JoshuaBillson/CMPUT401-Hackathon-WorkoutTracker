@@ -1,5 +1,5 @@
 from django.contrib.auth import login
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, Http404
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
 
@@ -15,3 +15,6 @@ def register(request):
             user = form.save()
             login(request, user)
             return redirect(reverse("workouts:view"))
+        else:
+            msgs = ["Invalid Password!"]
+            return render(request, "users/register.html", {"messages": msgs})
