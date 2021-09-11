@@ -4,5 +4,5 @@ from django.db.models import F
 
 
 # Create your views here.
-def view(request: HttpRequest):
-    return render(request, "workouts/view.html", {})
+def index(request: HttpRequest):
+    return render(request, "base.html", {"message": "This Is The Home Page!"})
