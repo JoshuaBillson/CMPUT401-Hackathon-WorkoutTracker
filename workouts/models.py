@@ -1,10 +1,11 @@
 from django.db import models
+import django.utils.timezone as timezone
 import datetime
 
 class WorkoutLog(models.Model):
     exercise = models.CharField(max_length=100)
-    duration = models.DecimalField(max_digits=3 , decimal_places=4)
-    date = models.DateField(default=datetime.date.today())
+    duration = models.IntegerField(max_length=3)
+    date = models.DateField(default=timezone.now())
 
 class DietPlan(models.Model):
     water = models.DecimalField(decimal_places=3 , max_digits=3)
