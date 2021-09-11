@@ -1,4 +1,4 @@
-from django.contrib.auth import login
+from django.contrib.auth import login,logout
 from django.shortcuts import redirect, render, Http404
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
@@ -38,3 +38,16 @@ def register(request):
                 if not validator[0](request.POST):
                     msgs.append(validator[1])
             return render(request, "users/register.html", {"messages": msgs})
+
+def logOut(request):
+    if request.method == "GET":
+        # try:
+        logout(request)#return None
+        # except:
+        #     pass
+    return redirect('/home')
+    # elif request.method == "POST":
+        
+    #     logout(request)#return None
+    #     return redirect('/home')
+    
