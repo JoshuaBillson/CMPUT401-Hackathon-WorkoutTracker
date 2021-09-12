@@ -2,11 +2,12 @@ from django.db import models
 import django.utils.timezone as timezone
 from django.contrib.auth.models import User
 
+
 class WorkoutLog(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     exercise = models.CharField(max_length=150)
-    duration = models.IntegerField(max_length=3)
-    date = models.DateTimeField(default=timezone.now())
+    duration = models.IntegerField()
+    date = models.DateTimeField(default=timezone.now)
 
 
 class DietPlan(models.Model):
