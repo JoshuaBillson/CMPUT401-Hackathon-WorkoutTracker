@@ -25,7 +25,7 @@ validators = [(passwordLengthValidator, "Passwords Must Contain At Least 8 Chara
 
 def register(request):
     if request.method == "GET":
-        return render( request, "users/register.html", {"form": UserCreationForm})
+        return render(request, "users/register.html", {"form": UserCreationForm})
     elif request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -56,14 +56,6 @@ def loginPage(request):
 
 
 def logOut(request):
-    if request.method == "GET":
-        # try:
-        logout(request)#return None
-        # except:
-        #     pass
-    return redirect('/home')
-    # elif request.method == "POST":
-        
-    #     logout(request)#return None
-    #     return redirect('/home')
-    
+    logout(request)
+    return redirect(reverse("home"))
+

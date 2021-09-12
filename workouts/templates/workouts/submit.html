@@ -1,7 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="jumbotron jumbotron-fluid mb-0" style="height: 100vh; width: 100vw; background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),  url(https://cdn.pixabay.com/photo/2015/07/27/18/56/fitness-863081_1280.jpg); background-position: center;">
+    <div class="jumbotron jumbotron-fluid mb-0" style="height: 100vh; width: 100vw; background: linear-gradient( rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)),  url(https://cdn.pixabay.com/photo/2015/07/27/18/56/fitness-863081_1280.jpg); background-position: center;">
+
+        <!-- Logout Button -->
+        <div class="m-5" style="position: absolute; right: 0; top: 0;">
+            <form action="{% url "users:logout" %}" method="POST">
+                {% csrf_token %}
+                <button style="width: 125px;" type="submit" class="btn btn-primary btn-lg">Logout</button>
+            </form>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="m-5" style="position: absolute; left: 0; top: 0;">
+            <a href={% url "workouts:view" %}><button style="width: 125px;" type="button" class="btn btn-danger btn-lg">Go Back</button></a>
+        </div>
+
         <div class="container h-100">
             <div class="row mx-auto justify-content-center align-items-center h-100">
 
