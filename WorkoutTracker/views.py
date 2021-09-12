@@ -8,27 +8,4 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def index(request: HttpRequest):
-    msgs=[]
-    if request.method == "GET":
-        return render( request, "home.html", {"form": AuthenticationForm} )
-    elif request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect(reverse("workouts:view"))
-            # Redirect to a success page.
-        else:
-            msgs = ['fail to login']
-            return render(request, "home.html", {"messages": msgs})
-        # Return an 'invalid login' error message.
-
-        # form = AuthenticationForm(request.POST)
-        # if form.is_valid():
-        #     user = form.get_user()
-        #     login(request, user)
-        #     return redirect(reverse("home"))
-        # else:
-        #     msgs = ['fail to login']
-        #     return render(request, "home.html", {"messages": msgs})
+    return redirect(reverse("users:login"))
