@@ -1,5 +1,5 @@
 from django.contrib.auth import login, logout, authenticate
-from django.shortcuts import redirect, render, Http404
+from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User

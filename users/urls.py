@@ -1,4 +1,4 @@
-from django.urls import include, path
+from django.urls import path
 from .views import register, logOut, loginPage
 
 app_name = "users"

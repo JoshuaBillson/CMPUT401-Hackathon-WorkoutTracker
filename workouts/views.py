@@ -1,9 +1,7 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
-from django.http import HttpRequest, HttpResponseRedirect
+from django.shortcuts import render, reverse, redirect
+from django.http import HttpRequest
 from .forms import WorkoutLogForm
 from .models import WorkoutLog
-from django.contrib.auth.models import User
-from django.db.models import F
 
 
 # Create your views here.
