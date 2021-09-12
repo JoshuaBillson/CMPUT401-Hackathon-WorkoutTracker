@@ -7,8 +7,7 @@ We built a web app called WorkoutTracker which allows users to register, login, 
 The backend was implemented in Django and we styled the frontend with Bootstrap 4. Views were rendered server side before being sent to the client. 
 To manage our requirements for persistent data storage we used SQLite.
 
-# Our Team:
-
+# Our Team:  
 <table role="table">
   <thead>
     <tr>
@@ -27,8 +26,6 @@ To manage our requirements for persistent data storage we used SQLite.
     </tr>
   </tbody>
 </table>
-https://youtu.be/7QBYQC9DEiU
-https://www.youtube.com/watch?v=7QBYQC9DEiU
 
 # Demo Video
 [![Demo Video](https://img.youtube.com/vi/7QBYQC9DEiU/0.jpg)](https://www.youtube.com/watch?v=7QBYQC9DEiU)
