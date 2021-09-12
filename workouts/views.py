@@ -15,11 +15,12 @@ def view(request: HttpRequest):
 
 
 def submit(request: HttpRequest):
-    if request.method == "GET":
+    if request.method == "GET" and request.user.is_authenticated:
         return render(request, "workouts/submit.html", {"user": request.user})
-    else:
-        form = WorkoutLogForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect(reverse("workouts:view"))
-        return render(request, "workouts/submit.html", {"message": "Error!"})
+    elif request.method == "GET" and not request.user.is_authenticated:
+        return redirect(reverse("users:login"))
+    form = WorkoutLogForm(request.POST)
+    if form.is_valid():
+        form.save()
+        return redirect(reverse("workouts:view"))
+    return render(request, "workouts/submit.html", {"message": "Error!"})
